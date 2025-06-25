@@ -51,7 +51,7 @@ TypeScript errors become messier as the complexity of types increases. At some p
 This extension will help you understand what's going on. For example, in this relatively
 
 - Windsurf Plugin (formerly Codeium)
-
+  
 What is Windsurf?
 Windsurf is the modern coding superpower, a free code acceleration toolkit built on cutting edge AI technology. The Windsurf VSCode Plugin provides autocomplete, chat, and search capabilities in 70+ languages, with lightning fast speeds and state-of-the-art suggestion quality.
-- 
+
