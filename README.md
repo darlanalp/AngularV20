@@ -1,6 +1,10 @@
 # AngularV20
 Exemplos aplicados para o Angular 20
 
+# Intalação do NVM
+A node.js version management utility for Windows. Ironically written in Go.
+https://github.com/coreybutler/nvm-windows
+
 # Extensões utilizadas
  - Angular Language Service
    
