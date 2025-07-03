@@ -1,11 +1,1 @@
-@if (shwow()) {
-  <strong>Alguma coisa</strong>
-}@else {
- <strong>Alguma coisa false</strong>
-}
-
-@for ( user of users(); track user ) {
-  <div>{{user}}</div>
-} @empty {
- <strong>Nã ha usuários</strong> 
-}
+<app-users-list [users]="users()" (remove)="remove($event)">
