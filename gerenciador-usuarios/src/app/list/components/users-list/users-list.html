@@ -1,7 +1,5 @@
-<input type="text" [(ngModel)]="search"/>    
-
 <ul>
-    @for (user of filteredUsers(); track  user) {      
+    @for (user of users(); track  user) {      
         <li>
             {{user}} <button (click)="remove(user)">Remove</button>
         </li>
