@@ -1,5 +1,4 @@
-import { Component, computed, input, output,  signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, computed, inject, input, output,  signal } from '@angular/core';
 
 @Component({
   selector: 'app-users-list', 
@@ -8,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class UsersList {
-
+  
   users = input.required<string[]>();
   removeUser = output<string>({alias:'remove'});
   
