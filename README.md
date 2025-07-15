@@ -6,7 +6,7 @@ A node.js version management utility for Windows. Ironically written in Go.
 https://github.com/coreybutler/nvm-windows
 # Node
 Node a partir da 20.19.0
-#JSON SERVER
+# JSON SERVER
 - Comando para instalar o JSON Server
 - npm i -D json-server@0
 # Extensões utilizadas
