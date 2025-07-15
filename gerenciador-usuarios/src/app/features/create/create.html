@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="create()">  
+
+    <div>
+        <label for="name">Nome:</label>
+        <input type="text" formControlName="name">
+    </div>
+
+    @if (form.controls.name.errors?.['required']) {
+       <div class="error-message ">Campo obrigatório</div> 
+    }
+
+    <button [disabled]="form.invalid">Criar usuário</button>
+
+</form>
