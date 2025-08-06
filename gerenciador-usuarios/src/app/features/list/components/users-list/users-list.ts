@@ -1,4 +1,5 @@
 import { Component, computed, inject, input, output,  signal } from '@angular/core';
+import { User } from '../../../../shared/interfaces/user';
 
 @Component({
   selector: 'app-users-list', 
@@ -8,11 +9,11 @@ import { Component, computed, inject, input, output,  signal } from '@angular/co
 
 export class UsersList {
   
-  users = input.required<string[]>();
-  removeUser = output<string>({alias:'remove'});
+  users = input.required<User[]>();
+  removeUser = output<number>({alias:'remove'});
   
-  remove(user: string) {
-    this.removeUser.emit(user);
+  remove(id: number) {
+    this.removeUser.emit(id);
   }
   
 }

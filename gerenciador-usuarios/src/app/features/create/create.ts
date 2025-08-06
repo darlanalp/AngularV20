@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Users } from '../../shared/services/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -9,12 +11,18 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class Create {
   
+  userService = inject(Users);
+  router = inject(Router);
+
   form = new FormGroup({
-    name: new FormControl('', { validators: Validators.required })    
+    name: new FormControl('', { validators: [Validators.required], nonNullable:true })    
   });
 
-  create() {
-     
+  create() {     
      const user = this.form.controls.name.value;
+     this.userService.post({name: user}).subscribe();
+
+     //Redireciona para a página princial
+     this.router.navigateByUrl('');
   }
 }
