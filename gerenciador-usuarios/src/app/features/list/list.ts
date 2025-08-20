@@ -5,17 +5,22 @@ import { Users } from "../../shared/services/users";
 import { User } from "../../shared/interfaces/user";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: "app-list",
-    template: `@if (isLoading()) {
-                        <div>Loading...</div>
-                    }
-                    @else{
-                        <app-search-input [(search)]="search"/>
-                        <app-users-list [users]="users()" (remove)="remove($event)"/>
-                    }`,
-    imports: [UsersList, SearchInput]
+    template: `
+        <div>
+          <a routerLink="/create">Criar Usuário</a>        
+        </div>
+        <app-search-input [(search)]="search"/>
+        @if (isLoading()) {
+             <div>Loading...</div>
+        }
+        @else{        
+            <app-users-list [users]="users()" (remove)="remove($event)"/>
+        }`,
+    imports: [UsersList, SearchInput, RouterLink]
 })
 export class ListComponent implements OnInit { isLoading = signal(true);
 

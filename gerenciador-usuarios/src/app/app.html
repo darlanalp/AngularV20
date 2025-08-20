@@ -1,7 +1,8 @@
-<header>
-   <h1>Gerenciador de Usuários</h1>
-   <a routerLink= "/create">Criar Usuário</a>
-   <a routerLink= "/list">Usuários</a>
-</header>
+<mat-toolbar class="toolbar">
+  <span>Gerenciador de Usuários</span>
+</mat-toolbar>
 
-<router-outlet/>
+<div class="container">
+   <a routerLink= "/list"> Usuários</a>
+   <router-outlet/>
+</div>
