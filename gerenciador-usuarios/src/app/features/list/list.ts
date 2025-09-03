@@ -6,21 +6,13 @@ import { User } from "../../shared/interfaces/user";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
 import { RouterLink } from "@angular/router";
+import { MatButton, MatButtonModule } from "@angular/material/button";
 
 @Component({
-    selector: "app-list",
-    template: `
-        <div>
-          <a routerLink="/create">Criar Usuário</a>        
-        </div>
-        <app-search-input [(search)]="search"/>
-        @if (isLoading()) {
-             <div>Loading...</div>
-        }
-        @else{        
-            <app-users-list [users]="users()" (remove)="remove($event)"/>
-        }`,
-    imports: [UsersList, SearchInput, RouterLink]
+    selector: 'app-list',
+    templateUrl: './list.html',
+    styleUrls: ['./list.scss'],
+    imports: [UsersList, SearchInput, RouterLink, MatButtonModule]
 })
 export class ListComponent implements OnInit { isLoading = signal(true);
 

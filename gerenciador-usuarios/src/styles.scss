@@ -6,6 +6,7 @@
 @use '@angular/material' as mat;
 
 @use './styles/theme/overrides/toolbar.scss';
+@use './styles/theme/overrides/button.scss';
 
 html {
   @include mat.theme((
