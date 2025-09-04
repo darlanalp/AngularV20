@@ -4,12 +4,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ErrorBtn } from './directives/error-btn/error-btn';
 import { TitleCasePipe } from '@angular/common';
+import { TruncatePipe } from "./pipes/truncate/truncate-pipe";
 
 @Component({
   selector: 'app-users-list', 
   templateUrl: './users-list.html',
   styleUrl: './users-list.scss',
-  imports: [MatCardModule, MatButtonModule, ErrorBtn, TitleCasePipe]
+  imports: [MatCardModule, MatButtonModule, ErrorBtn, TitleCasePipe, TruncatePipe]
 })
 
 export class UsersList {
