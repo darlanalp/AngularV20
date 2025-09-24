@@ -17,10 +17,14 @@ export class UsersList {
   
   users = input.required<User[]>();
   removeUser = output<number>({alias:'remove'});
+  editUser = output<User>({alias:'edit'});
   
 
   remove(id: number) {
     this.removeUser.emit(id);
   }
   
+  edit(user: User) {
+    this.editUser.emit(user);
+  }
 }

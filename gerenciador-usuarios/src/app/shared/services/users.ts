@@ -10,6 +10,14 @@ export class Users {
 
   httpClient = inject(HttpClient);
 
+  getById(id: number){
+    return this.httpClient.get<User>(`http://localhost:3000/users/${id}`);      
+  }
+
+  put(id: number, payload: UserPayload) {    
+    return this.httpClient.put<User>(`http://localhost:3000/users/${id}`, payload);      
+  }
+
   getAll(search?:string) {
     let httpParams = new HttpParams();
 

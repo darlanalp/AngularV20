@@ -5,7 +5,7 @@ import { Users } from "../../shared/services/users";
 import { User } from "../../shared/interfaces/user";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { take } from "rxjs";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { MatButton, MatButtonModule } from "@angular/material/button";
 
 @Component({
@@ -14,10 +14,14 @@ import { MatButton, MatButtonModule } from "@angular/material/button";
     styleUrls: ['./list.scss'],
     imports: [UsersList, SearchInput, RouterLink, MatButtonModule]
 })
-export class ListComponent implements OnInit { isLoading = signal(true);
+export class ListComponent implements OnInit {
+
+
+  isLoading = signal(true);
 
   usersService = inject(Users);
   destroyRef = inject(DestroyRef);
+  router = inject(Router)
   search = signal('');
   users = signal<User[]>([]);
   
@@ -52,6 +56,10 @@ export class ListComponent implements OnInit { isLoading = signal(true);
     this.usersService.delete(id).subscribe(() => { 
        this.users.update(usersX => usersX.filter(u => u.id !== id));       
     });    
+  }
+
+  edit(user: User) {
+   this.router.navigate(['/edit', user.id]);
   }
 
 }

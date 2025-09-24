@@ -5,8 +5,11 @@
      flex-direction: row;
      align-items: center;
      
-     .action-button{
-         margin-left: auto;
+     .actions{
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+        gap: 8px;
      }
  }
 }

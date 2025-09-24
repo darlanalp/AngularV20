@@ -8,5 +8,8 @@
 <div>Loading...</div>
 }
 @else{
-<app-users-list [users]="users()" (remove)="remove($event)" />
+<app-users-list 
+   [users]="users()" 
+   (remove)="remove($event)" 
+   (edit)="edit($event)"/>
 }
